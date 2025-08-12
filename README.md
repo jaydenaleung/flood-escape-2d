@@ -1,4 +1,7 @@
 # Flood Escape 2(D) - Community-Made 2D Version of Crazyblox's Flood Escape 2
+
+<img height="200" alt="icon" src="https://github.com/user-attachments/assets/71f1de4c-2d1c-4efd-ab11-064f87f19851" />
+
 ### [As made popular on Roblox.](https://www.roblox.com/games/738339342) Inspired by Castle Tides by Jolluminati, the easiest level in the game. Made for Hack Club's Jumpstart Program, through Godot 4 with GDScript.
 
 <img height="500" alt="Screenshot 2025-08-11 at 9 31 20 PM" src="https://github.com/user-attachments/assets/cac28946-79e2-4073-8fb1-cd61711cdef0" />
