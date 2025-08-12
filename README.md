@@ -1,16 +1,15 @@
 # Flood Escape 2(D) - Community-Made 2D Version of Crazyblox's Flood Escape 2
 ### [As made popular on Roblox.](https://www.roblox.com/games/738339342) Inspired by Castle Tides by Jolluminati, the easiest level in the game. Made for Hack Club's Jumpstart Program, through Godot 4 with GDScript.
 
+<img height="500" alt="Screenshot 2025-08-11 at 9 31 20 PM" src="https://github.com/user-attachments/assets/cac28946-79e2-4073-8fb1-cd61711cdef0" />
+
 ## Overview
 
 Flood Escape 2(D) is a fan-made 2D reinterpretation of the popular Roblox game Flood Escape 2 by Crazyblox. Inspired specifically by Castle Tides—the easiest level in the original game created by Jolluminati—this project brings the thrilling flood escape experience into a simple yet engaging 2D format.
 
 Built using Godot 4 and GDScript, Flood Escape 2(D) was developed as part of Hack Club’s Jumpstart Program, aiming to recreate and explore game design principles through community-driven projects.
 
-DEMO LINK
-ITCHIO LINK
-
-PICTURE
+**Play it online: [https://loliipoppi.itch.io/flood-escape-2d](https://loliipoppi.itch.io/flood-escape-2d)**
 
 This project was built for [Hack Club's](https://hackclub.com) [Jumpstart](https://jumpstart.hackclub.com) program (specifically Jumpstart for Daydream). Check it out! If you are under 18 and interested in technology, Hack Club has some of the best communities, support, programs, funding, and opportunities you will ever find for high schoolers.
 
