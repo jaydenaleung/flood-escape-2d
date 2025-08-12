@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://csq3m1elk5gy2"]
+
+[ext_resource type="Texture2D" uid="uid://c1uqpr0x506w0" path="res://assets/backgrounds-assets/castle-tides/room-1/room-1-bkg.png" id="1_4ikea"]
+[ext_resource type="PackedScene" uid="uid://cgtfd1q5tvcao" path="res://player.tscn" id="2_is5ow"]
+[ext_resource type="PackedScene" uid="uid://cyewiso0may4f" path="res://barriers.tscn" id="3_e6hjw"]
+[ext_resource type="PackedScene" uid="uid://bhgbq0f0i1ihk" path="res://room_2.tscn" id="4_bq48c"]
+[ext_resource type="PackedScene" uid="uid://cak6lvxblatk3" path="res://transition.tscn" id="4_hrfef"]
+[ext_resource type="PackedScene" uid="uid://ffus04k3fcnj" path="res://button.tscn" id="6_hrfef"]
+[ext_resource type="Script" uid="uid://b87afllbja1ho" path="res://ladder.gd" id="7_hrfef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6hjw"]
+size = Vector2(47.1447, 156.538)
+
+[node name="Room1" type="Node2D"]
+
+[node name="bkg" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(0.337523, 0.337523)
+texture = ExtResource("1_4ikea")
+
+[node name="player" parent="." instance=ExtResource("2_is5ow")]
+position = Vector2(31, 283)
+scale = Vector2(0.56, 0.56)
+
+[node name="barriers" parent="." instance=ExtResource("3_e6hjw")]
+position = Vector2(1.278, 0)
+
+[node name="transition" parent="." instance=ExtResource("4_hrfef")]
+position = Vector2(1.278, 0)
+transitionRoom = ExtResource("4_bq48c")
+
+[node name="construction" type="StaticBody2D" parent="."]
+position = Vector2(1.278, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(-5, 116, 88, 138, 162, 153, 212, 160, 212, 168, 154.923, 157.216, -5, 127)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(258, 163, 325, 168, 358, 173, 375, 179, 385, 184, 392, 185, 395, 188, 369, 188, 258, 170)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(385, 186, 422, 180, 491, 173, 555, 164, 637, 148, 638, 159, 387, 191)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(499, 285, 503, 315, 549, 326, 555, 320, 598, 330, 605, 321, 599, 290, 576, 287, 573, 283, 570, 256, 528, 250, 519, 254, 523, 284, 510, 281)
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="button1" parent="buttons" instance=ExtResource("6_hrfef")]
+position = Vector2(547.278, 252)
+
+[node name="button2" parent="buttons" instance=ExtResource("6_hrfef")]
+position = Vector2(56.278, 110)
+
+[node name="button3" parent="buttons" instance=ExtResource("6_hrfef")]
+position = Vector2(577.278, 138)
+
+[node name="ladder" type="Area2D" parent="."]
+position = Vector2(1.278, 0)
+script = ExtResource("7_hrfef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
+position = Vector2(231.277, 236.049)
+rotation = 0.0698132
+shape = SubResource("RectangleShape2D_e6hjw")
+
+[connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]

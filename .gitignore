@@ -1,6 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 .nomedia
+*.gd.uid
+
+# Godot plugins
+**/addons/
 
 # Godot-specific ignores
 .import/
@@ -15,3 +19,6 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Mac-specific
+*.DS_Store

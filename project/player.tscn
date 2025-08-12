@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtfd1q5tvcao"]
+
+[ext_resource type="Texture2D" uid="uid://knjacba3rtac" path="res://assets/characters-assets/roblox-player-character.png" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://d1flepvi5myjv" path="res://player.gd" id="1_ij6vw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij6vw"]
+radius = 112.0
+height = 616.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_ij6vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_f50pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_ij6vw")

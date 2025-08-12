@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3hdqlvry0nev"
-path="res://.godot/imported/fe2(d) logo.svg-3833af0f21fc7ddf1b80be04eac69eda.ctex"
+uid="uid://bxu6mgdwluial"
+path="res://.godot/imported/active-button.png-cdddef3ec4b05451396ecd0a2d655437.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/logos/fe2(d) logo.svg"
-dest_files=["res://.godot/imported/fe2(d) logo.svg-3833af0f21fc7ddf1b80be04eac69eda.ctex"]
+source_file="res://assets/buttons-assets/active-button.png"
+dest_files=["res://.godot/imported/active-button.png-cdddef3ec4b05451396ecd0a2d655437.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

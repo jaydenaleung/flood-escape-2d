@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb4omlbjjviqd"]
+
+[ext_resource type="Texture2D" uid="uid://oe0klw0acy0y" path="res://assets/backgrounds-assets/castle-tides/room-3/room-3-bkg.png" id="1_tb7r0"]
+[ext_resource type="PackedScene" uid="uid://cgtfd1q5tvcao" path="res://player.tscn" id="2_kqys3"]
+[ext_resource type="PackedScene" uid="uid://cyewiso0may4f" path="res://barriers.tscn" id="3_b45jr"]
+[ext_resource type="PackedScene" uid="uid://cak6lvxblatk3" path="res://transition.tscn" id="4_vp30c"]
+[ext_resource type="PackedScene" uid="uid://ffus04k3fcnj" path="res://button.tscn" id="6_83p2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bot3n"]
+size = Vector2(649, 56)
+
+[node name="Room3" type="Node2D"]
+
+[node name="bkg" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(0.337523, 0.337523)
+texture = ExtResource("1_tb7r0")
+
+[node name="player" parent="." instance=ExtResource("2_kqys3")]
+position = Vector2(85, 179)
+scale = Vector2(0.35, 0.35)
+
+[node name="barriers" parent="." instance=ExtResource("3_b45jr")]
+position = Vector2(1.278, 0)
+
+[node name="transition" parent="." instance=ExtResource("4_vp30c")]
+position = Vector2(1.278, 0)
+
+[node name="construction" type="StaticBody2D" parent="."]
+position = Vector2(1.278, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construction"]
+position = Vector2(321.222, 300)
+shape = SubResource("RectangleShape2D_bot3n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="construction"]
+position = Vector2(321.222, 300)
+polygon = PackedVector2Array(-250.5, -98, -142.5, -98, -58.5, -112, -24.5, -123, 17.5, -123, 66.5, -137, 79.5, -145, 120.5, -151, 139.5, -151, 138.5, -154, 157.5, -158, 172.5, -163, 172.5, -180, 185.5, -195, 229.5, -201, 260.5, -202, 264.5, -195, 185.5, -189, 176.5, -158, 132.5, -145, 66.5, -131, 11.5, -115, -40.5, -112, -142.5, -92, -262.5, -94, -261.5, -305, -248.5, -305)
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="button1" parent="buttons" instance=ExtResource("6_83p2d")]
+position = Vector2(547, 84)
+
+[node name="ladder" type="Area2D" parent="."]
+position = Vector2(1.278, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]

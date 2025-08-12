@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhgbq0f0i1ihk"]
+
+[ext_resource type="Texture2D" uid="uid://cajb4p65en3rc" path="res://assets/backgrounds-assets/castle-tides/room-2/room-2-bkg.png" id="1_vy8vn"]
+[ext_resource type="PackedScene" uid="uid://cgtfd1q5tvcao" path="res://player.tscn" id="2_ttdm0"]
+[ext_resource type="PackedScene" uid="uid://cyewiso0may4f" path="res://barriers.tscn" id="3_w3sgd"]
+[ext_resource type="Script" uid="uid://b87afllbja1ho" path="res://ladder.gd" id="4_ttdm0"]
+[ext_resource type="PackedScene" uid="uid://cak6lvxblatk3" path="res://transition.tscn" id="4_vy8vn"]
+[ext_resource type="PackedScene" uid="uid://bb4omlbjjviqd" path="res://room_3.tscn" id="5_vy8vn"]
+[ext_resource type="PackedScene" uid="uid://ffus04k3fcnj" path="res://button.tscn" id="6_f7hpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy8vn"]
+size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1untl"]
+size = Vector2(8, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7hpu"]
+size = Vector2(650, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkprr"]
+size = Vector2(50, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3sgd"]
+size = Vector2(30, 70)
+
+[node name="Room2" type="Node2D"]
+
+[node name="bkg" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(0.337523, 0.337523)
+texture = ExtResource("1_vy8vn")
+
+[node name="player" parent="." instance=ExtResource("2_ttdm0")]
+position = Vector2(135, 246)
+scale = Vector2(0.5, 0.5)
+
+[node name="barriers" parent="." instance=ExtResource("3_w3sgd")]
+position = Vector2(1.278, 0)
+
+[node name="transition" parent="." instance=ExtResource("4_vy8vn")]
+position = Vector2(1.278, 0)
+transitionRoom = ExtResource("5_vy8vn")
+
+[node name="construction" type="StaticBody2D" parent="."]
+position = Vector2(1.278, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(-8.278, 31, 3.722, 32, 34.722, 65, 18.722, 107, -23.278, 83)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="construction"]
+position = Vector2(113.722, 89)
+polygon = PackedVector2Array(-10, 30, 16, 50, 59, 50, 99, 40, 114, 43, 127, 62, 77, 71, -5, 72, -18, 64)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(262.722, 139, 269.722, 149, 295.722, 144, 375.722, 144, 383.722, 121, 290.722, 119, 271.722, 124, 273.722, 134)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="construction"]
+polygon = PackedVector2Array(419.722, 123, 410.722, 144, 547.722, 148, 582.722, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="construction"]
+position = Vector2(234.722, 180)
+shape = SubResource("RectangleShape2D_vy8vn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="construction"]
+position = Vector2(277.722, 179.5)
+shape = SubResource("RectangleShape2D_1untl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="construction"]
+position = Vector2(318.722, 307)
+shape = SubResource("RectangleShape2D_f7hpu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="construction"]
+position = Vector2(505.722, 249)
+shape = SubResource("RectangleShape2D_hkprr")
+
+[node name="ladder" type="Area2D" parent="."]
+position = Vector2(1.278, 0)
+script = ExtResource("4_ttdm0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ladder"]
+polygon = PackedVector2Array(34.722, 65, -25.278, 234, -16.278, 279, 64.722, 280, 103.722, 118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
+position = Vector2(257.722, 209)
+shape = SubResource("RectangleShape2D_w3sgd")
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="button1" parent="buttons" instance=ExtResource("6_f7hpu")]
+position = Vector2(558, 107)
+
+[node name="button2" parent="buttons" instance=ExtResource("6_f7hpu")]
+position = Vector2(260, 159)
+
+[node name="button3" parent="buttons" instance=ExtResource("6_f7hpu")]
+position = Vector2(467, 176)
+
+[connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
